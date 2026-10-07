@@ -10,6 +10,8 @@
     "images:check": "node scripts/check-images.mjs"
   },
   "dependencies": {
+    "@convex-dev/auth": "^0.0.96",
+    "convex": "^1.46.0",
     "next": "^15.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
