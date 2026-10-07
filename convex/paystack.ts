@@ -7,14 +7,14 @@ export const initializePayment = action({
     const response = await fetch("https://api.paystack.co/transaction/initialize", {
       method: "POST",
       headers: {
-        Authorization: \`Bearer \${process.env.PAYSTACK_SECRET_KEY}\`,
+        Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: args.email,
         amount: args.amount * 100, // Paystack is in kobo
         reference: args.bookingId, // using bookingId as reference
-        callback_url: \`\${process.env.NEXT_PUBLIC_SITE_URL}/book/success\`,
+        callback_url: `${process.env.NEXT_PUBLIC_SITE_URL}/book/success`,
       }),
     });
     
