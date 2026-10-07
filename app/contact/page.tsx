@@ -2,7 +2,6 @@ import React from "react";
 import { Metadata } from "next";
 import { siteConfig, buildWhatsAppUrl, buildPhoneCallUrl } from "@/lib/site";
 import { Photo } from "@/components/Photo";
-import { WaveDivider } from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
   title: "Contact & Directions",

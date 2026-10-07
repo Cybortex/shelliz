@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { allServices, buildWhatsAppUrl, siteConfig } from "@/lib/site";
+import { allServices, buildWhatsAppUrl } from "@/lib/site";
 import { WaveDivider } from "@/components/WaveDivider";
 
-export default function BookingPage() {
+function BookingForm() {
   const searchParams = useSearchParams();
   const prefilledService = searchParams.get("service") || "";
 
@@ -37,26 +37,8 @@ export default function BookingPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen pt-32 pb-24 bg-[#fff6f9]">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <span className="w-8 h-[2px] bg-[#c9a45c]" aria-hidden="true" />
-            <span className="text-xs uppercase tracking-widest font-bold text-[#1b7f9e]">
-              Reservations
-            </span>
-            <span className="w-8 h-[2px] bg-[#c9a45c]" aria-hidden="true" />
-          </div>
-          <h1 className="font-display text-4xl md:text-5xl font-black text-[#0b4f6c] tracking-tight">
-            Book Appointment
-          </h1>
-          <p className="mt-4 text-base md:text-lg text-[#062a3a]/80 mx-auto">
-            Secure your session at Sheillz Empire. Please fill in your preferred details, and we will confirm your reservation via WhatsApp.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-[#c9a45c]/30">
-          <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-[#c9a45c]/30">
+      <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-4">
               <h2 className="text-xl font-display font-bold text-[#0b4f6c] border-b border-[#0b4f6c]/10 pb-2">
                 1. Service Details
@@ -191,7 +173,33 @@ export default function BookingPage() {
               </p>
             </div>
           </form>
+    </div>
+  );
+}
+
+export default function BookingPage() {
+  return (
+    <div className="flex flex-col min-h-screen pt-32 pb-24 bg-[#fff6f9]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 mb-2">
+            <span className="w-8 h-[2px] bg-[#c9a45c]" aria-hidden="true" />
+            <span className="text-xs uppercase tracking-widest font-bold text-[#1b7f9e]">
+              Reservations
+            </span>
+            <span className="w-8 h-[2px] bg-[#c9a45c]" aria-hidden="true" />
+          </div>
+          <h1 className="font-display text-4xl md:text-5xl font-black text-[#0b4f6c] tracking-tight">
+            Book Appointment
+          </h1>
+          <p className="mt-4 text-base md:text-lg text-[#062a3a]/80 mx-auto">
+            Secure your session at Sheillz Empire. Please fill in your preferred details, and we will confirm your reservation via WhatsApp.
+          </p>
         </div>
+
+        <Suspense fallback={<div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-[#c9a45c]/30 min-h-[400px] flex items-center justify-center text-[#1b7f9e]">Loading form...</div>}>
+          <BookingForm />
+        </Suspense>
       </div>
       <WaveDivider color="text-[#0b4f6c]/5" bgColor="bg-transparent" className="mt-20" />
     </div>

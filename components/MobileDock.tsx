@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { siteConfig, buildWhatsAppUrl, buildPhoneCallUrl } from "@/lib/site";
+import { buildWhatsAppUrl, buildPhoneCallUrl } from "@/lib/site";
 
 export function MobileDock() {
   const whatsappUrl = buildWhatsAppUrl({

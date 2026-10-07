@@ -72,7 +72,7 @@ export function Bento({ maxItems = 6, showViewAll = true }: BentoProps) {
   return (
     <div className="w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[220px]">
-        {tiles.map((tile, idx) => {
+        {tiles.map((tile) => {
           let maskClass = "rounded-3xl";
           if (tile.shape === "arch") {
             maskClass = "mask-arch";
