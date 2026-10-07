@@ -58,11 +58,11 @@ export default function AdminDashboard() {
                         </td>
                         <td className="py-4 px-2 font-mono text-xs">{b.reference}</td>
                         <td className="py-4 px-2">
-                          <span className={\`px-2 py-1 rounded-full text-xs font-bold \${
+                          <span className={`px-2 py-1 rounded-full text-xs font-bold ${
                             b.status === 'confirmed' ? 'bg-green-100 text-green-700' :
                             b.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
                             'bg-gray-100 text-gray-700'
-                          }\`}>
+                          } `}>
                             {b.status}
                           </span>
                         </td>
