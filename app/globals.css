@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ocean: #0b4f6c;
+  --color-lagoon: #1b7f9e;
+  --color-rose: #f9d5e1;
+  --color-blush: #fff6f9;
+  --color-gold: #c9a45c;
+  --color-midnight: #062a3a;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+}
+
+:root {
+  --background: #fff6f9;
+  --foreground: #062a3a;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings font */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Arch and Circle clip path utilities */
+.mask-arch {
+  clip-path: inset(0 0 0 0 round 140px 140px 0 0);
+}
+
+.mask-arch-lg {
+  clip-path: inset(0 0 0 0 round 240px 240px 0 0);
+}
+
+.mask-circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+/* Drifting wave animations */
+@keyframes waveDriftSlow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes waveDriftReverse {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-wave-drift {
+  animation: waveDriftSlow 18s ease-in-out infinite;
+}
+
+.animate-wave-drift-rev {
+  animation: waveDriftReverse 22s ease-in-out infinite;
+}
+
+/* Marquee animation */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Soft ripple button state */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-ripple:hover {
+  transform: translateY(-1px);
+}
+
+.btn-ripple:active {
+  transform: translateY(1px);
+}
+
+/* Dotted leader for menu items */
+.dotted-leader {
+  flex: 1 1 auto;
+  border-bottom: 2px dotted rgba(11, 79, 108, 0.25);
+  margin: 0 1rem;
+  height: 1px;
+  position: relative;
+  top: -4px;
+}
+
+/* Accessibility: strictly stop all motion under prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
