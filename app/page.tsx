@@ -126,18 +126,18 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-[#f9d5e1]/40 border-y border-[#c9a45c]/25 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
-            {/* Arch Mask Feature Image */}
+            {/* Refined Luxury Spa Feature Frame */}
             <div className="md:col-span-5 flex justify-center">
               <div className="relative w-full max-w-sm">
-                <div className="mask-arch overflow-hidden bg-[#f0e8eb] border-2 border-[#c9a45c]/40 shadow-2xl">
-                  <Photo
-                    filename="signature.jpg"
-                    alt="Sheillz Empire signature spa treatment ritual"
-                    width={800}
-                    height={1000}
-                    aspectRatio="aspect-[4/5]"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative p-2.5 rounded-[2.5rem] bg-white/80 border border-[#c9a45c]/40 shadow-2xl backdrop-blur-sm">
+                  <div className="overflow-hidden rounded-[2rem] bg-[#f0e8eb] aspect-[4/5]">
+                    <Photo
+                      filename="signature.jpg"
+                      alt="Sheillz Empire signature spa treatment ritual"
+                      fill
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
                 {/* Floating Decorative Gold Seal */}
                 <div className="absolute -bottom-4 -right-4 bg-[#0b4f6c] text-[#f9d5e1] border border-[#c9a45c] rounded-full p-4 shadow-xl text-center select-none">

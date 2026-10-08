@@ -49,15 +49,15 @@ export default function AboutPage() {
 
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md">
-              <div className="mask-arch overflow-hidden border-2 border-[#c9a45c]/30 shadow-2xl bg-[#f0e8eb]">
-                <Photo
-                  filename="about.jpg"
-                  alt={`Portrait of ${siteConfig.owner.name}, founder of Sheillz Empire`}
-                  width={800}
-                  height={1000}
-                  aspectRatio="aspect-[4/5]"
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative p-2.5 rounded-[2.5rem] bg-white/80 border border-[#c9a45c]/40 shadow-2xl backdrop-blur-sm">
+                <div className="overflow-hidden rounded-[2rem] bg-[#f0e8eb] aspect-[4/5] relative">
+                  <Photo
+                    filename="about.jpg"
+                    alt={`Portrait of ${siteConfig.owner.name}, founder of Sheillz Empire`}
+                    fill
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>

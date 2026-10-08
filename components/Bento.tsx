@@ -10,58 +10,50 @@ interface BentoProps {
 const GALLERY_TILES = [
   {
     filename: "gallery-1.jpg",
-    alt: "Sheillz Empire relaxation massage room atmosphere",
-    caption: "Sanctuary Ambience",
-    shape: "arch",
+    alt: "Estelin luxury facial serum and botanical collection",
+    caption: "Premium Skincare Suite",
     className: "md:col-span-2 md:row-span-2 aspect-[4/5] md:aspect-auto",
   },
   {
     filename: "gallery-2.jpg",
-    alt: "Tailored luxury facial hydration therapy session",
-    caption: "Deep Cleansing Facial",
-    shape: "circle",
+    alt: "Tailored luxury facial hydration therapy and essence masks",
+    caption: "Essence Mask Ritual",
     className: "col-span-1 aspect-square",
   },
   {
     filename: "gallery-3.jpg",
-    alt: "Precision acrylic nail art and gel extension finish",
-    caption: "Artisanal Nail Polish",
-    shape: "rounded",
+    alt: "Precision pedicure and vibrant red nail polish finish",
+    caption: "Artisanal Pedicure & Nails",
     className: "col-span-1 aspect-square",
   },
   {
     filename: "gallery-4.jpg",
-    alt: "Gentle body scrub and skin polishing treatment ritual",
-    caption: "Full Body Polish",
-    shape: "rounded",
+    alt: "Dr Teal's Rose Shea sugar scrub exfoliating body polish",
+    caption: "Rose Body Scrub",
     className: "md:col-span-2 aspect-[16/9] md:aspect-auto",
   },
   {
     filename: "gallery-5.jpg",
-    alt: "Pristine spa pedicure foot bath and exfoliation",
-    caption: "Royal Pedicure",
-    shape: "rounded",
+    alt: "Deep cleansing facial treatment with soothing foam",
+    caption: "Deep Cleanse Facial",
     className: "col-span-1 aspect-square",
   },
   {
     filename: "gallery-6.jpg",
-    alt: "Herbal steam bath wellness facility",
-    caption: "Herbal Steam Therapy",
-    shape: "arch",
-    className: "col-span-1 aspect-[4/5]",
+    alt: "COSRX Advanced Snail 96 Mucin Power Essence at Sheillz Empire",
+    caption: "Hydrating Snail Mucin",
+    className: "col-span-1 aspect-square",
   },
   {
     filename: "gallery-7.jpg",
-    alt: "Student practical workshop during spa masterclass session",
-    caption: "Masterclass Practice",
-    shape: "rounded",
+    alt: "Revitalizing leg and full-body polishing therapy",
+    caption: "Body Glow Therapy",
     className: "col-span-1 aspect-square",
   },
   {
     filename: "gallery-8.jpg",
-    alt: "Bespoke manicure and hand wellness treatment",
-    caption: "Hand Ritual",
-    shape: "rounded",
+    alt: "Active skin rejuvenation serums and collagen firming wash",
+    caption: "Collagen & Radiance Care",
     className: "col-span-1 md:col-span-2 aspect-square md:aspect-[16/9]",
   },
 ];
@@ -71,19 +63,12 @@ export function Bento({ maxItems = 6, showViewAll = true }: BentoProps) {
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[220px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[240px]">
         {tiles.map((tile) => {
-          let maskClass = "rounded-3xl";
-          if (tile.shape === "arch") {
-            maskClass = "mask-arch";
-          } else if (tile.shape === "circle") {
-            maskClass = "mask-circle";
-          }
-
           return (
             <div
               key={tile.filename}
-              className={`group relative overflow-hidden bg-[#f0e8eb] border border-[#c9a45c]/25 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-[#c9a45c] ${maskClass} ${tile.className}`}
+              className={`group relative overflow-hidden bg-[#f0e8eb] border border-[#c9a45c]/30 rounded-3xl shadow-sm transition-all duration-300 hover:shadow-2xl hover:border-[#c9a45c] ${tile.className}`}
             >
               <Photo
                 filename={tile.filename}
@@ -93,7 +78,7 @@ export function Bento({ maxItems = 6, showViewAll = true }: BentoProps) {
               />
 
               {/* Overlay with caption */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#062a3a]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#062a3a]/85 via-[#062a3a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#f9d5e1]">
                   {tile.caption}
                 </span>

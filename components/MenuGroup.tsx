@@ -18,19 +18,17 @@ export function MenuGroup({ group, showImage = false }: MenuGroupProps) {
       <div className={`grid grid-cols-1 ${showImage ? "lg:grid-cols-12 gap-8 lg:gap-12" : "gap-6"}`}>
         {showImage && (
           <div className="lg:col-span-4 hidden lg:block">
-            <div className="sticky top-28 overflow-hidden rounded-3xl border border-[#c9a45c]/30 shadow-lg bg-[#f0e8eb]">
-              <div className="mask-arch overflow-hidden">
+            <div className="sticky top-28 overflow-hidden rounded-3xl border border-[#c9a45c]/35 shadow-xl bg-white p-2.5 space-y-2.5">
+              <div className="overflow-hidden rounded-2xl bg-[#f0e8eb] aspect-[4/5] relative">
                 <Photo
                   filename={group.image}
                   alt={`${group.title} category cover`}
-                  width={600}
-                  height={750}
-                  aspectRatio="aspect-[4/5]"
+                  fill
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-4 bg-[#0b4f6c] text-[#f9d5e1] text-center">
-                <span className="font-display text-sm tracking-wider uppercase font-semibold">
+              <div className="py-2.5 px-4 bg-[#0b4f6c] text-[#f9d5e1] text-center rounded-xl">
+                <span className="font-display text-xs tracking-widest uppercase font-bold text-white">
                   {group.title}
                 </span>
               </div>
