@@ -27,7 +27,12 @@ export const EXPECTED_IMAGES = [
   "gallery-8.jpg",
   "about.jpg",
   "team-photo.jpg",
-  "location-front.jpg"
+  "location-front.jpg",
+  "product-scrub.jpg",
+  "product-mucin.jpg",
+  "product-masks.jpg",
+  "product-serums.jpg",
+  "product-bodywash.jpg"
 ];
 
 const MAX_SIZE_BYTES = 500 * 1024; // 500 KB

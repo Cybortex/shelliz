@@ -3,7 +3,7 @@
 All content lives in `lib/site.ts`. Anything marked TODO stays marked until the owner supplies it.
 
 ## Sitemap
-`/` Home, `/services`, `/gallery`, `/training`, `/about`, `/contact`, `/book`, `/offers/[slug]` (future promos only, empty until the owner approves one).
+`/` Home, `/services`, `/products` (spa boutique storefront), `/gallery`, `/training`, `/about`, `/contact`, `/book`, `/offers/[slug]` (future promos only, empty until the owner approves one).
 
 ## Home (order matters)
 1. Floating nav and full-bleed hero. Proposed headline: "Rule your glow." (owner to approve). Subline: "Spa and salon: massage, facials, nails, waxing, body polishing and skincare." Primary button Book Now, secondary Call.

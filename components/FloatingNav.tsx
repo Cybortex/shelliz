@@ -8,6 +8,7 @@ import { Photo } from "./Photo";
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Menu" },
+  { href: "/products", label: "Shop" },
   { href: "/gallery", label: "Gallery" },
   { href: "/training", label: "Academy" },
   { href: "/about", label: "About" },

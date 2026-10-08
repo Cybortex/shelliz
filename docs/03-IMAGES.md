@@ -16,6 +16,11 @@ Owner's real photos only. Put them in `public/images/` with these exact names (c
 | `about.jpg` | 1000x1250 | About page |
 | `team-photo.jpg` | 1920x1080 | About page |
 | `location-front.jpg` | 1200x800 | Contact page |
+| `product-scrub.jpg` | 1135x1440 | Products storefront (Dr Teal's Rose Scrub) |
+| `product-mucin.jpg` | 920x1150 | Products storefront (COSRX Snail Mucin) |
+| `product-masks.jpg` | 1090x1362 | Products storefront (Farm Stay Essence Masks) |
+| `product-serums.jpg` | 1080x1350 | Products storefront (Estelin Skincare Suite) |
+| `product-bodywash.jpg` | 1252x1565 | Products storefront (Skin By Zaron Body Wash) |
 
 Also add `app/icon.png` (512x512, S and E only) and `app/opengraph-image.jpg` (1200x630). Get the owner's permission for every photo and avoid showing clients' faces without consent.
 

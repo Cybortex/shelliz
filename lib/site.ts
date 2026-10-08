@@ -315,3 +315,98 @@ export function buildPhoneCallUrl(): string {
   const number = siteConfig.contact.phone.replace(/[^0-9+]/g, "");
   return number ? `tel:${number}` : "tel:+2348000000000";
 }
+
+export interface ProductItem {
+  id: string;
+  name: string;
+  brand: string;
+  category: "Body Care" | "Facial Serums" | "Masks & Treatments" | "Cleansers";
+  description: string;
+  volume: string;
+  price: string; // "Ask for price" until owner supplies
+  image: string; // Exact filename from docs/03-IMAGES.md
+  inStock: boolean;
+  isBestSeller?: boolean;
+}
+
+export const products: ProductItem[] = [
+  {
+    id: "dr-teals-rose-scrub",
+    name: "Dr Teal's Shea Sugar Scrub (Rose Essential Oil)",
+    brand: "Dr Teal's",
+    category: "Body Care",
+    description: "Formulated with certified shea butter, evening primrose oil, and macadamia seed oil infused with natural rose essential oil to gently exfoliate and polish dull skin.",
+    volume: "19 oz / 538 g",
+    price: "Ask for price",
+    image: "product-scrub.jpg",
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: "cosrx-snail-mucin",
+    name: "Advanced Snail 96 Mucin Power Essence",
+    brand: "COSRX",
+    category: "Facial Serums",
+    description: "Enriched with 96% snail secretion filtrate to deeply replenish moisture, soothe sensitive texture, and repair the skin barrier without feeling heavy.",
+    volume: "100 ml / 3.38 fl. oz",
+    price: "Ask for price",
+    image: "product-mucin.jpg",
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: "farm-stay-essence-masks",
+    name: "Real Essence Sheet Mask Multi-Pack",
+    brand: "Farm Stay",
+    category: "Masks & Treatments",
+    description: "Hydrating and calming botanical sheet masks featuring nourishing Shea Butter, Avocado, Manuka Honey, and Peach extract varieties.",
+    volume: "23 ml single-use sheets",
+    price: "Ask for price",
+    image: "product-masks.jpg",
+    inStock: true,
+  },
+  {
+    id: "estelin-skincare-serums",
+    name: "Targeted Facial Serums & Cleanser Set",
+    brand: "Estelin",
+    category: "Facial Serums",
+    description: "Clinical-inspired botanical treatments including Rosehip Niacinamide spots-fading serum, 5D Hyaluronic Acid hydration, and Collagen firming face wash.",
+    volume: "30 ml serums & 100 ml wash",
+    price: "Ask for price",
+    image: "product-serums.jpg",
+    inStock: true,
+  },
+  {
+    id: "skin-by-zaron-vitamin-c-body-wash",
+    name: "Vitamin C Brightening & Exfoliating Body Wash",
+    brand: "Skin By Zaron",
+    category: "Cleansers",
+    description: "Antioxidant-rich daily body cleanser enriched with Vitamin C, glycolic acid, and castor oil for gentle exfoliation and radiant full-body hydration.",
+    volume: "650 ml / 21.98 fl. oz",
+    price: "Ask for price",
+    image: "product-bodywash.jpg",
+    inStock: true,
+  },
+];
+
+export function buildProductOrderUrl(product: ProductItem): string {
+  const number = siteConfig.contact.whatsappNumber.replace(/[^0-9]/g, "");
+
+  const lines = [
+    "Hello Sheillz Empire, I would like to order a skincare product from your boutique:",
+    `• Product: ${product.name} (${product.brand})`,
+    `• Size/Volume: ${product.volume}`,
+    `• Listed Price: ${product.price}`,
+    "",
+    "Please let me know current availability, delivery/pickup options, and payment details. Thank you!",
+  ].filter(Boolean);
+
+  const text = encodeURIComponent(lines.join("\n"));
+
+  if (!number) {
+    return `https://wa.me/?text=${text}`;
+  }
+
+  return `https://wa.me/${number}?text=${text}`;
+}
+
